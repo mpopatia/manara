@@ -3,9 +3,6 @@
   <head>
 
 
-    <style type="text/css" href="index.css"></style>
-
-
    	<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
@@ -18,87 +15,30 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous">
 		</script>
 
-    
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="index.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAtmWyxiVApMHi8PrhFKUy3aJVVMXnDAhc&callback=initMap"
-    async defer></script>
+    <style type="text/css" href="index.css"></style>
+
 
 	<title>
 	 	Manara 
 	</title>
   </head>
 	<body>
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <!-- <nav class="navbar navbar-default navbar-fixed-top">
       <div class="navbar-header">
         <span class="navbar-brand">Manara</span>
       </div>
-    </nav>
+    </nav> -->
 
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-
-    <div id="map">
-    </div>
-
-<!--     <div class="row">
-      <div class="graph">
-        <img src="place2.png">
+    
+    <div class="row">
+      <div class="col-lg-offset-2">
+        <div id="visualisation">
+        </div>
       </div>
-      <div class="row">
-        <div class="meta-data">
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="row">
-                <div class="col-lg-offset-1 col-lg-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10">
-                  <img src="place.png">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6 col-md-6 col-sm-6">
-            <div class="row">
-                <div class="col-lg-offset-1 col-lg-10 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-10">
-                  <img src="place.png">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>  
-    </div> -->
-
-
-<!--     <div>
-
-        <button type="button" onclick="renderModal()" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#activityDetails">
-          Launch demo modal
-        </button>
-
-
-        <div class="modal fade" id="activityDetails" tabindex="-1" role="dialog" aria-labelledby="activityDetailsLabel">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="activityDetailsLabel">Modal title</h4>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div> -->
-
+    </div>
 
 	</body>
 
