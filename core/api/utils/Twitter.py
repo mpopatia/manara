@@ -1,6 +1,9 @@
 import re
 from TwitterAPI import TwitterAPI
 from textblob import TextBlob
+from collections import defaultdict
+import operator
+from pprint import pprint
 
 from core.api import Config
 
@@ -12,7 +15,7 @@ api = TwitterAPI(
 )
 
 
-def get_tweets_by_GPS(location):
+def get_tweets_by_GPS(location, text_only=False):
     api = TwitterAPI(
         Config.CONSUMER_KEY,
         Config.CONSUMER_SECRET,
@@ -25,17 +28,26 @@ def get_tweets_by_GPS(location):
     tweets = []
 
     for item in response.get_iterator():
+        data = {}
         if "text" in item:
-            text = ' '.join(re.sub('(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+://\S+)', " ", item['text']).split())
-            tweets.append(text)
+            if text_only:
+                data['text'] = ' '.join(
+                    re.sub('(@[A-Za-z0-9]+)|([^0-9A-Za-z \t])|(\w+://\S+)', " ", item['text']).split())
+            else:
+                data['text'] = item['text']
 
+            if 'profile_image_url' in item:
+                data['profile_image'] = item['profile_image_url']
+            elif 'profile_image_url_https' in item:
+                data['profile_image'] = item['profile_image_url_https']
+            tweets.append(data)
     return tweets
 
 
 def get_sentiment(tweets):
     data = ''
     for t in tweets:
-        data += t[:len(t) - 1] + " "
+        data += t['text'][len(t) - 1] + " "
     blob = TextBlob(data)
 
     total = 0
@@ -48,8 +60,25 @@ def get_sentiment(tweets):
         return (int((total / float(count)) * 100) + 100) / 2
 
 
+def get_major_hashtag(tweets):
+    hashtags = defaultdict(int)
+    for tweet in tweets:
+        tags = re.findall(r'(?i)(?<=#)\w+', tweet['text'])
+        for tag in tags:
+            hashtags[tag] += 1
+
+    return sorted(hashtags.items(), key=operator.itemgetter(1), reverse=True)[0][0]
+
+
 if __name__ == '__main__':
     tweets = get_tweets_by_GPS('24.523272,54.434817,1mi')
-    print(
+
+    pprint(tweets)
+
+    pprint(
+        get_major_hashtag(tweets)
+    )
+
+    pprint(
         get_sentiment(tweets)
     )
