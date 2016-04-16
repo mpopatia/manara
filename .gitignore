@@ -266,3 +266,5 @@ crashlytics-build.properties
 fabric.properties
 
 
+# Custom rules
+config.ini

@@ -6,6 +6,7 @@ import json
 from flask import request, Response
 from werkzeug.exceptions import BadRequest
 from core.api import mongo_client
+from core.api.utils.Twitter import get_tweets_by_GPS, get_sentiment
 
 from core.api import app
 
