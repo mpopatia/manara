@@ -1,0 +1,13 @@
+[
+	{
+		name: "#NYUADHack",
+		volume: [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24],
+		start: "06:15",
+		sentiment: 30,
+		tweets: ["A trendy urban village: @nyuabudhabi is an excellent example of New Urbanism at its best! https://t.co/bckjGT2a2K", "RT @jsjohnst: The hackathon has 49% female participation this year! #nyuadhack #progress #change4good @ New https://t.co/AJBTrnSIea
+			", "RT @jsjohnst: Sana with a mother / daughter duo of very gifted technologists! #family #nyuadhack #nyu #nyuad https://t.co/a9taHcoOy6
+			"],
+		images: ["https://t.co/HQe2gnfDRh", "https://t.co/bckjGT2a2K", "https://t.co/LdAcgxowZc", "https://t.co/2rIJMJ34TB"]
+	},
+
+]
