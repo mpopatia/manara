@@ -1,0 +1,5 @@
+TwitterAPI
+Flask
+Flask-PyMongo
+Flask-CORS
+textblob
