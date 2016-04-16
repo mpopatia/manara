@@ -4,8 +4,13 @@
 import subprocess
 
 from flask import Flask
+from flask.ext.pymongo import PyMongo
 
 app = Flask(__name__)
+
+app.config['MONGO_DBNAME'] = 'manara'
+
+mongo_client = PyMongo(app)
 
 
 class Config:
