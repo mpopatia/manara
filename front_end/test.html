@@ -21,6 +21,20 @@
     <style type="text/css" href="index.css"></style>
 
 
+    <link rel="stylesheet" href="css/libr/flat-ui.css">
+    <link rel="stylesheet" href="css/libr/odometer.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="text/javascript" src="js/libr/jquery.min.js"></script>
+    <script type="text/javascript" src="js/libr/flat-ui.js"></script>
+    <script type="text/javascript" src="js/libr/moment.js"></script>
+    <script type="text/javascript" src="js/libr/amcharts.js"></script>
+    <script type="text/javascript" src="js/libr/serial.js"></script>
+    <script type="text/javascript" src="js/libr/animate.min.js"></script>
+    <script type="text/javascript" src="js/libr/odometer.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+
+
 	<title>
 	 	Manara 
 	</title>
@@ -32,8 +46,36 @@
       </div>
     </nav> -->
 
-    
     <div class="row">
+
+      <div class="modal fade" id="server_msg_modal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <!-- <h4 class="modal-title">Modal title</h4> -->
+            </div>
+            <<!-- div class="modal-body">
+              <iframe src=""></iframe>
+            </div> -->
+            <header></header>
+            <article>
+              <section>
+                <div class="odometer" id="volume">0</div>
+              </section>
+              <section class="tweets"></section>
+              <section>
+                <div class="chart" id="line"></div>
+              </section>
+              <section class="tweets"></section>
+            </article>
+            <div class="clear"></div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+    
+    <div class="row" style="background:#5C5C5C;">
       <div class="col-lg-offset-2">
         <div id="visualisation">
         </div>
