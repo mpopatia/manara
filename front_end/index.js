@@ -116,7 +116,7 @@ function dealClick(data) {
           max_density = max_density + 15;
           line.animateData(line_data, { duration: 1000 });
           line.valueAxes[0].maximum = max_density;
-          $('#volume').html(data.volume[data.volume.length - 1]);
+          $('#volume').html(data[data.length - 1]);
 
         });
 
@@ -134,7 +134,7 @@ function dealClick(data) {
     }, 1000);
 
     for (var i = 0; i < data.tweets.length; i++) {
-      data.tweets[i].profile_image = 'http://carbonwho.com/wp-content/uploads/2011/11/d-d2.jpg'
+      // data.tweets[i].profile_image = 'http://carbonwho.com/wp-content/uploads/2011/11/d-d2.jpg'
       $('.tweets').append('<div class="tweet">\
         <div class="profile" style="background:url(' + data.tweets[i].profile_image + ') no-repeat center center;background-size:60px 60px;"></div>\
         <div class="text">' + data.tweets[i].text + '</div></div>');

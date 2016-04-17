@@ -85,3 +85,7 @@ section:nth-child(4){
 .modal-title {
 	font-size: 50px;
 }
+
+#wrapper {
+	margin-top: 80px;
+}
