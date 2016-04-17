@@ -5,22 +5,12 @@
 	font-family: Lato, sans-serif;
 }
 body {
-	background: #394165;
-}
-header {
-	color: #FFF;
-	background-color:#3498DB;
-	width: 100%;
-	height: 35px;
-	line-height: 35px;
-	z-index: 1;
-	text-align: center;
-	font-weight: 700;
+	background: #313236;
 }
 section {
 	float: left;
 	background-color: #FFF;
-	width: calc(50% - 20px);
+	width: 100%;
 	padding: 10px;
 }
 section:first-child{
@@ -30,19 +20,16 @@ section:first-child{
 	color: #FFF;
 	background-color: #16A085;
 }
-section:nth-child(3){
+section:nth-child(2){
 	background-color: #1ABC9C;
-	margin-top: -270px;
 	padding-left: 0;
-	width: calc(50% - 10px);
 }
-section:nth-child(even){
-	background-color: #95A5A6;
-	height: 310px;
-	overflow: auto;
+section:nth-child(3) {
+	background-color: #313236;
 }
 section:nth-child(4){
-	display: none;
+	background-color: #313236;
+	height: auto;
 }
 .clear {
 	clear: both;
@@ -50,21 +37,21 @@ section:nth-child(4){
 }
 .chart {
 	width: 100%;
-	height: 250px;
+	height: 700px;
 }
 .tweet {
-	margin-bottom: 15px;
+	margin: 40px 0px 40px 0px;
 }
 .text {
 	color: #FFF;
-	font-size: 12px;
-	line-height: 20px;
+	font-size: 21px;
+	line-height: 25px;
 }
 .profile {
 	padding: 0;
-	margin: 2px 5px 0px 0px;
-	height: 15px;
-	width: 15px;
+	margin: 2px 15px 0px 0px;
+	height: 50px;
+	width: 50px;
 	border-radius:50%;
 	float: left;
 }
@@ -73,37 +60,28 @@ section:nth-child(4){
 	height:77.5px;
 	width:20%;
 	float: left;
-}	
-@media only screen and (max-width:800px) {
-	section {
-		width: calc(100% - 20px);
-	}
-	section:nth-child(2) {
-		display: none;
-	}
-	section:nth-child(3){
-		margin-top: 0px;
-		width: calc(100% - 10px);
-	}
-	section:nth-child(4){
-		display: block;
-	}
-	section:nth-child(even){
-		height: 150px;
-	}
 }
-
-
-
 .modal-dialog {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
+  width: 96%;
+  height: 96%;
+  margin: 20px;
+  padding: 20px;
 }
-
 .modal-content {
   height: auto;
   min-height: 100%;
   border-radius: 0;
+  overflow: auto;
+}
+
+.modal-title {
+	text-align: center;
+}
+
+#visualisation {
+	text-align: center;
+}
+
+.modal-title {
+	font-size: 50px;
 }
