@@ -94,8 +94,11 @@ def create_activity():
         text_only=False
     )
 
+    tag = get_major_hashtag(tweets)
+
     data = {
-        "_id": get_major_hashtag(tweets),
+        "_id": tag,
+        "name": '#' + tag,
         "count": 0,
         "volume": [],
         "sentiment": get_sentiment(tweets),
@@ -140,6 +143,7 @@ def update_activity(_id):
 
     data = {
         "_id": _id,
+        "name": resp['name'],
         "count": count,
         "volume": volume,
         "sentiment": get_sentiment(tweets),
