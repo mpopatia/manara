@@ -27,6 +27,8 @@ def upcount():
                 '_id': data['MAC_ID']
             }
     ) is None:
+        print("New MAC ID:", data['MAC_ID'])
+
         mongo_client.db.macid.insert_one(
             {
                 '_id': data['MAC_ID']
@@ -71,6 +73,16 @@ def upcount():
             json.dumps({'message': "Received a duplicate MAC_ID"}, indent=4),
             mimetype="application/json"
         )
+
+
+@app.route('/api/activity', strict_slashes=False, methods=['GET'])
+def get_all_activities():
+    cursor = mongo_client.db.activity.find()
+
+    return Response(
+        json.dumps(list(cursor), indent=4),
+        mimetype="application/json"
+    )
 
 
 @app.route('/api/activity/create', strict_slashes=False, methods=['GET'])
@@ -193,7 +205,6 @@ def get_volume(_id):
 
     for index, each in enumerate(volume):
         while index < len(volume) - 1 and now <= timestamp_to_obj(volume[index + 1]['TIMESTAMP']):
-            print(now)
             data.append(each['value'])
             now += timedelta(seconds=5)
 
